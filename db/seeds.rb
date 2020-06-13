@@ -19,7 +19,12 @@ def seed_sample_actions
 
 end
 
+def seed_thought_leaders
+  ThoughtLeader.create(handle: "osopepatrisse", link_url: "https://www.instagram.com/osopepatrisse/", image_url: "")
+end
+
 seed_sample_actions
+# seed_thought_leaders
 
 ###############
 # Questions
