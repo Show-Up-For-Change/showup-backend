@@ -1,3 +1,3 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :email
+  attributes :fb, :why, :completed_actions
 end

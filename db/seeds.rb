@@ -10,8 +10,6 @@ require 'csv'
 
 
 def seed_sample_actions
-  Action.destroy_all
-
   CSV.foreach("./db/revised.csv", headers: true, header_converters: :symbol, converters: :all) do |row|
     Action.create(row.to_hash)
   end
@@ -24,8 +22,31 @@ def seed_thought_leaders
   ThoughtLeader.create(handle: "adriennemareebrown", name: "adrienne maree brown", image_url: "https://instagram.fphl2-4.fna.fbcdn.net/v/t51.2885-19/s150x150/93244089_1394440277430041_5977926707401719808_n.jpg?_nc_ht=instagram.fphl2-4.fna.fbcdn.net&_nc_ohc=E3vC7nShAv0AX_EcUCA&oh=508616f60bb7e4a546ae962245787c91&oe=5F0FEABA")
 end
 
+def seed_users
+  User.create(fb: "1", why: "I am for justice.")
+  User.create(fb: "2", why: "I care.")
+  User.create(fb: "3", why: "Chicken nuggets.")
+end
+
+def seed_user_actions
+  15.times do
+    UserAction.create(user_id: User.all.sample.id, action_id: Action.all.sample.id)
+  end
+end
+
+def delete_seeds
+  UserAction.destroy_all
+  User.destroy_all
+  ThoughtLeader.destroy_all
+  Action.destroy_all
+end
+
+
+delete_seeds
 seed_sample_actions
 seed_thought_leaders
+seed_users
+seed_user_actions
 
 ###############
 # Questions
