@@ -4,4 +4,5 @@ class ActionsController < ApplicationController
     actions = Action.all
     render json: actions
   end
+  
 end

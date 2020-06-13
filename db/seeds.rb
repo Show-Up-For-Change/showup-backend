@@ -7,12 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 require 'csv'
-require 'byebug'
 
 
 def seed_sample_actions
   Action.destroy_all
-  
+
   CSV.foreach("./db/revised.csv", headers: true, header_converters: :symbol, converters: :all) do |row|
     Action.create(row.to_hash)
   end
