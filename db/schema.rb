@@ -28,8 +28,8 @@ ActiveRecord::Schema.define(version: 2020_06_13_144722) do
 
   create_table "thought_leaders", force: :cascade do |t|
     t.string "handle"
+    t.string "name"
     t.string "image_url"
-    t.string "link_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
