@@ -34,7 +34,16 @@ def seed_user_actions
   end
 end
 
+def seed_commitments
+  kinds = ["time", "money", "actions"]
+  frequencies = ["daily", "weekly", "monthly"]
+  3.times do
+    Commitment.create(user_id: User.all.sample.id, kind: kinds.sample, amount: rand(1..10), frequency: frequencies.sample)
+  end
+end
+
 def delete_seeds
+  Commitment.destroy_all
   UserAction.destroy_all
   User.destroy_all
   ThoughtLeader.destroy_all
@@ -47,6 +56,7 @@ seed_sample_actions
 seed_thought_leaders
 seed_users
 seed_user_actions
+seed_commitments
 
 ###############
 # Questions
