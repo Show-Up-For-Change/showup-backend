@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :thought_leaders
   resources :user_actions
   resources :actions
   resources :users
