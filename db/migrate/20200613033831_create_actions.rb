@@ -6,7 +6,6 @@ class CreateActions < ActiveRecord::Migration[6.0]
       t.integer :duration
       t.string :url
       t.string :subject
-      t.string :category
       t.string :source
 
 

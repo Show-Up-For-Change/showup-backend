@@ -1,0 +1,2 @@
+class ThoughtLeader < ApplicationRecord
+end

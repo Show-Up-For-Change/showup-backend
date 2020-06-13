@@ -1,0 +1,2 @@
+class ThoughtLeadersController < ApplicationController
+end
