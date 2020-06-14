@@ -47,7 +47,6 @@ ActiveRecord::Schema.define(version: 2020_06_13_224053) do
   create_table "user_actions", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "action_id", null: false
-    t.date "date_completed"
     t.integer "duration"
     t.string "comment"
     t.datetime "created_at", precision: 6, null: false
